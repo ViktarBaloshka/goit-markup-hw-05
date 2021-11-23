@@ -1,5 +1,5 @@
 /*background color: #E5E5E5
-button orde-service: #188CE8; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+button order-service: #188CE8; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 color button filter: #2196F3;
 color inactive button filter: #F5F4FA;
 color hero:#2F303A;
@@ -55,6 +55,18 @@ body {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.contacts-link:hover,
+.contacts-link:focus,
+.current,
+.clients-link:hover,
+.clients-link:focus,
+.footer .contacts-link:hover,
+.footer .contacts-link:focus {
+  color: var(--active-element-color);
 }
 
 /*---------------Section header-------------*/
@@ -116,18 +128,6 @@ body {
   display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.contacts-link:hover,
-.contacts-link:focus,
-.current,
-.clients-link:hover,
-.clients-link:focus,
-.footer .contacts-link:hover,
-.footer .contacts-link:focus {
-  color: var(--active-element-color);
 }
 
 /*Contacts*/
@@ -437,10 +437,6 @@ body {
   background-color: var(--hero-color);
 }
 
-/* .footer .address {
-  margin-top: 20px;
-} */
-
 .address .address-text {
   margin: 0 0 9px;
   font-style: normal;
@@ -504,6 +500,7 @@ body {
   color: var(--first-fonts-color);
   cursor: pointer;
 }
+
 .filter-button:hover,
 .filter-button:focus,
 .current-button {
