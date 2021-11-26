@@ -16,6 +16,7 @@ second fonts color: #757575;
   --order-service-color: #188ce8;
   --soc-inactive: #afb1b8;
   --time-transition: cubic-bezier(0.4, 0, 0.2, 1);
+  --time: 250ms;
 }
 /*Body*/
 
@@ -88,6 +89,7 @@ body {
 }
 
 .header {
+  background-color: var(--basic-color);
   border-bottom: 1px solid #ececec;
 }
 
@@ -122,29 +124,36 @@ body {
   position: relative;
 
   display: block;
-  color: var(--first-fonts-color);
   padding-top: 32px;
   padding-bottom: 32px;
-  transition: color 250ms var(--time-transition);
+
+  color: var(--first-fonts-color);
+  transition: color var(--time) var(--time-transition),
+    transform var(--time) var(--time-transition);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 5px;
-  background-color: var(--active-element-color);
   left: 0;
   bottom: -1px;
+  width: 100%;
+  height: 5px;
+
+  background-color: var(--active-element-color);
   border-radius: 2px;
   max-height: 4px;
+
   transform: scaleX(0);
-  transition: transform 250ms var(--time-transition);
+  transition: color var(--time) var(--time-transition),
+    transform var(--time) var(--time-transition);
 }
 
 .nav-link:hover::after,
 .current::after {
   transform: scaleX(1);
+  transition: color var(--time) var(--time-transition),
+    transform var(--time) var(--time-transition);
 }
 
 .nav .contacts-link {
@@ -164,7 +173,7 @@ body {
   letter-spacing: 0.02em;
 
   color: var(--second-fonts-color);
-  transition: color 250ms var(--time-transition);
+  transition: color var(--time) var(--time-transition);
 }
 
 .contacts-link .smartphone,
@@ -219,8 +228,9 @@ body {
   border-radius: 4px;
   background-color: var(--active-element-color);
   color: var(--basic-color);
-  transition: background-color 250ms var(--time-transition),
-    color 250ms var(--time-transition), box-shadow 250ms var(--time-transition);
+  transition: background-color var(--time) var(--time-transition),
+    color var(--time) var(--time-transition),
+    box-shadow var(--time) var(--time-transition);
 }
 
 .order-service:hover,
@@ -321,11 +331,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 0;
   margin: 0;
   width: 100%;
   height: 70px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -368,6 +378,7 @@ body {
   text-align: center;
   margin: 0;
   margin-bottom: 10px;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
@@ -376,11 +387,12 @@ body {
 
 .team-position {
   margin: 0 0 16px;
-
   text-align: center;
+
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
+
   color: var(--second-fonts-color);
 }
 
@@ -408,13 +420,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 44px;
   height: 44px;
+
   border-radius: 50%;
   color: var(--soc-inactive);
-  transition: background-color 250ms var(--time-transition),
-    color 250ms var(--time-transition);
+
+  transition: background-color var(--time) var(--time-transition),
+    color var(--time) var(--time-transition);
 }
 
 .soc-item {
@@ -465,12 +478,13 @@ body {
   align-items: center;
   width: 170px;
   height: 92px;
+
   border: 1px solid var(--soc-inactive);
   color: var(--soc-inactive);
   border-radius: 4px;
 
-  transition: border-color 250ms var(--time-transition),
-    color 250ms var(--time-transition);
+  transition: border-color var(--time) var(--time-transition),
+    color var(--time) var(--time-transition);
 }
 
 .clients-link .clients-svg {
@@ -493,10 +507,12 @@ body {
 
 .address .address-text {
   margin: 0 0 9px;
+
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
   color: var(--basic-color);
 }
 
@@ -513,11 +529,13 @@ body {
 .footer-soc-text {
   display: flex;
   margin: 0 0 20px;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+
   color: var(--basic-color);
 }
 
@@ -551,11 +569,13 @@ body {
   font-family: inherit;
   text-align: center;
   letter-spacing: 0.03em;
+
   color: var(--first-fonts-color);
   cursor: pointer;
 
-  transition: background-color 250ms var(--time-transition),
-    color 250ms var(--time-transition), box-shadow 250ms var(--time-transition);
+  transition: background-color var(--time) var(--time-transition),
+    color var(--time) var(--time-transition),
+    box-shadow var(--time) var(--time-transition);
 }
 
 .filter-button:hover,
@@ -583,8 +603,9 @@ body {
 
 .example-link {
   display: block;
-  transition: background-color 250ms var(--time-transition),
-    color 250ms var(--time-transition), box-shadow 250ms var(--time-transition);
+  transition: background-color var(--time) var(--time-transition),
+    color var(--time) var(--time-transition),
+    box-shadow var(--time) var(--time-transition);
 }
 
 .example-link:hover,
@@ -595,49 +616,45 @@ body {
 
 .example-thumb {
   position: relative;
-}
-
-.example-thumb:hover::before,
-.example-thumb:focus::before {
-  opacity: 1;
-  transition: opacity 250ms var(--time-transition);
+  height: 294px;
+  overflow: hidden;
+  transition: transform var(--time) var(--time-transition),
+    opacity var(--time) var(--time-transition);
 }
 
 .example-thumb::before {
-  content: '';
   position: absolute;
+  content: '';
   display: inline-block;
   width: 100%;
-  height: 294px;
+  height: 100%;
+
   background: rgba(33, 150, 243, 0.9);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 250ms var(--time-transition),
-    opacity 250ms var(--time-transition);
+  transform: translateY(101%);
+
+  opacity: 1;
+  transition: transform var(--time) var(--time-transition),
+    opacity var(--time) var(--time-transition);
 }
 
-.example-card:hover .example-thumb::before {
-  transform: translate(0);
-  transition: transform 250ms var(--time-transition),
-    opacity 250ms var(--time-transition);
+.example-item:hover .example-thumb::before,
+.example-item:hover .example-action {
+  transform: translateY(0%);
+  transition: transform var(--time) var(--time-transition);
 }
 
 .example-action {
   position: absolute;
-  left: 0;
   top: 0;
-  opacity: 0;
-}
+  left: 0;
 
-.example-card:focus .example-action,
-.example-card:hover .example-action {
-  opacity: 1;
-  transition: transform 250ms var(--time-transition),
-    opacity 250ms var(--time-transition);
+  transform: translateY(100%);
+  transition: transform var(--time) var(--time-transition);
 }
 
 .example-overlay {
   margin: 0;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.56;
@@ -687,7 +704,59 @@ body {
 
 .example-item .example-content {
   padding: 20px 24px;
+
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
+}
+
+/* --------------------Modal-------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+  transition: transform var(--time) var(--time-transition),
+    opacity var(--time) var(--time-transition);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0);
+  transition: transform var(--time) var(--time-transition),
+    opacity var(--time) var(--time-transition);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+  background: var(--basic-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.modal-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--basic-color);
 }
