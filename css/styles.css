@@ -167,7 +167,7 @@ body {
 .contacts-link {
   align-items: center;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -407,8 +407,7 @@ body {
 }
 
 .team-content {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 32px;
 }
 
 .soc {
@@ -554,6 +553,7 @@ body {
 
 .footer .contacts-link {
   color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
 }
 
 /********************************Portfolio page*********************************/
@@ -603,9 +603,7 @@ body {
 
 .example-link {
   display: block;
-  transition: background-color var(--time) var(--time-transition),
-    color var(--time) var(--time-transition),
-    box-shadow var(--time) var(--time-transition);
+  transition: box-shadow var(--time) var(--time-transition);
 }
 
 .example-link:hover,
@@ -637,8 +635,10 @@ body {
     opacity var(--time) var(--time-transition);
 }
 
-.example-item:hover .example-thumb::before,
-.example-item:hover .example-action {
+.example-link:hover .example-thumb::before,
+.example-link:focus .example-thumb::before,
+.example-link:hover .example-action,
+.example-link:focus .example-action {
   transform: translateY(0%);
   transition: transform var(--time) var(--time-transition);
 }
